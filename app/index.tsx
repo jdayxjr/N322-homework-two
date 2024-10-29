@@ -1,7 +1,9 @@
 import { Text, View, StyleSheet, Image } from "react-native";
 import {Colors} from "@/constants/Colors";
 import { Button } from "react-native-paper";
+import { useRouter } from "expo-router";
 export default function Index() {
+  const router = useRouter();
   return (
     <View style={styles.container}>
       <View style={styles.LogoContainer}>
@@ -14,11 +16,19 @@ export default function Index() {
         <Text style={styles.tagLineTop}>Come and check us out</Text>
         <Text style={styles.tagLine}>Are located in the heart of the big city. that is wher it all happens.
         </Text>
-        <Button mode="text" style={styles.btn}>
+        <Button 
+        mode="text" 
+        style={styles.btn}
+        onPress={() => router.push("/(auth)/sign-in")}
+        >
           <Text style={styles.WhiteText}>Sign In</Text>
         </Button>
         
-        <Button mode="text" style={styles.btn}>
+        <Button 
+        mode="text" 
+        style={styles.btn}
+        onPress={() => router.push("/(auth)/sign-up")}
+        >
           <Text style={styles.WhiteText}>Sign Up Today!</Text>
         </Button>
       </View>
