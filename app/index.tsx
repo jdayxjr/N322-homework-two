@@ -1,15 +1,26 @@
 import { Text, View, StyleSheet, Image } from "react-native";
+import {Colors} from "@/constants/Colors";
+import { Button } from "react-native-paper";
 export default function Index() {
   return (
     <View style={styles.container}>
       <View style={styles.LogoContainer}>
         <Image style={styles.logo} source={require("./../assets/images/Jays Outer Space_transparent-.png")} />
       </View>
-      <View>
-        <Text>Learn <Text>CODE!!!</Text>
+      <View style={styles.SubContainer}>
+      <Text style={styles.tagLineTop}>
+        Learn<Text style={styles.brownText}>CODE!!!</Text>
         </Text>
-        <Text>Come and check us out</Text>
-        <Text>Are located in the heart of the big city. that is wher it all happens.</Text>
+        <Text style={styles.tagLineTop}>Come and check us out</Text>
+        <Text style={styles.tagLine}>Are located in the heart of the big city. that is wher it all happens.
+        </Text>
+        <Button mode="text" style={styles.btn}>
+          <Text style={styles.WhiteText}>Sign In</Text>
+        </Button>
+        
+        <Button mode="text" style={styles.btn}>
+          <Text style={styles.WhiteText}>Sign Up Today!</Text>
+        </Button>
       </View>
     </View>
   );
@@ -40,5 +51,34 @@ height: 300,
   SubContainer:{
     padding: 20,
     marginTop:-20,
-  }
+    
+  },
+
+  tagLineTop:{
+    fontSize: 30,
+    textAlign:"center",
+  },
+
+  tagLine:{
+    fontSize: 15,
+    textAlign: "center",
+    marginVertical: 15,
+    color: Colors.DEV_GRAY,
+  },
+  
+  brownText:{
+    color: Colors.DEV_PRIMARY,
+  },
+
+  btn: {
+backgroundColor: Colors.DEV_PRIMARY,
+padding: 10,
+borderRadius: 50,
+marginTop: 50,
+  },
+
+  WhiteText:{
+    color: "#fff",
+    textAlign:"center",
+  },
 })
